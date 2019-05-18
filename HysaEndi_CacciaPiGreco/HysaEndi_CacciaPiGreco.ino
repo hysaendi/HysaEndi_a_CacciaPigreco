@@ -57,7 +57,19 @@ void loop() {
   {
     inserirePiGreco ( bottone2, record , vite, 5, "π");
   }
-
+  else if (numeroRandom == 3)
+  {
+    inserirePiGreco (bottone3 , record, vite, 4, "π");
+  }
+  else if (numeroRandom == 4)
+  {
+    inserirePiGreco (bottone4, record, vite, 6, "π");
+  }
+  else if (numeroRandom == 5)
+  {
+    inserirePiGreco (bottone5, record, vite, 2 , "π");
+  }
+  
 }
 
 void premereBottone (int bottone)
@@ -83,7 +95,19 @@ void premereBottone (int bottone)
   
 }
 
-void  inizio ()
+void inserisciPigreco ( int bottone, int record, int vite, int a, String s)
+{
+  lcd.setCursor (a, 1);
+  lcd.print(s);
+  if (digitalRead (bottone) == HIGH)
+  {
+    record++;
+    vite++;
+    
+  }
+}
+
+void inizio ()
 {
   lcd.clear();
   lcd.setCursor (0,0);
