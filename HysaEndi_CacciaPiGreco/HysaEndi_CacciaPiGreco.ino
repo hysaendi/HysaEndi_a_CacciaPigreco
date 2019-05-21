@@ -43,32 +43,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  inizio();
-  premereBottone (bottoneInizio);
-  lcd.setCursor (0,0);
-  lcd.print ("VITE" + vite);
- int numeroRandom  = random (1,6);
-  while (vite > 0)
-  if (numeroRandom == 1)
-  {
-    inserirePiGreco ( bottone1, record, vite, 1, "π");
-  }
-  else if (numeroRandom == 2)
-  {
-    inserirePiGreco ( bottone2, record , vite, 5, "π");
-  }
-  else if (numeroRandom == 3)
-  {
-    inserirePiGreco (bottone3 , record, vite, 4, "π");
-  }
-  else if (numeroRandom == 4)
-  {
-    inserirePiGreco (bottone4, record, vite, 6, "π");
-  }
-  else if (numeroRandom == 5)
-  {
-    inserirePiGreco (bottone5, record, vite, 2 , "π");
-  }
+  
   
 }
 
@@ -85,26 +60,14 @@ void premereBottone (int bottone)
 }
 
 
- void inserirePiGreco (int bottone, int record, int vite , int o,  String s)  
-{
-  lcd.setCursor (o, 1);
-  lcd.print (s);
-  premereBottone(bottone);
-  record++;
-  puntiPartita_Attuale++;
-  
-}
 
-void inserisciPigreco ( int bottone, int record, int vite, int a, String s)
+void aggiornaSchermo ()
 {
-  lcd.setCursor (a, 1);
-  lcd.print(s);
-  if (digitalRead (bottone) == HIGH)
-  {
-    record++;
-    vite++;
-    
-  }
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print ("LP" + String(vite));
+  lcd.setCursor (6,0);
+  lcd.print ("Punti :" + String(puntiPartita_Attuale));
 }
 
 void inizio ()
@@ -116,5 +79,3 @@ void inizio ()
   lcd.print ("RECORD" + String(record) + "PUNTI");
   
 }
-
-
