@@ -127,7 +127,7 @@ void aggiornaSchermo ()
 {
   lcd.clear();
   lcd.setCursor(0,0);
-  lcd.print ("LP" + String(vite));
+  lcd.print ("LP" + String(vite));   //LP = LIFE POINTS
   lcd.setCursor (6,0);
   lcd.print ("Punti :" + String(puntiPartita_Attuale));
 }
